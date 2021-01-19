@@ -1,0 +1,222 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:C C1
+U 1 1 5FFD19F6
+P 2000 3750
+F 0 "C1" H 2115 3796 50  0000 L CNN
+F 1 "10u" H 2115 3705 50  0000 L CNN
+F 2 "" H 2038 3600 50  0001 C CNN
+F 3 "~" H 2000 3750 50  0001 C CNN
+F 4 "C" H 2000 3750 50  0001 C CNN "Spice_Primitive"
+F 5 "10u" H 2000 3750 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 2000 3750 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    2000 3750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Barrel_Jack J1
+U 1 1 5FFD417C
+P 1200 3850
+F 0 "J1" H 1257 4175 50  0000 C CNN
+F 1 "Barrel_Jack" H 1257 4084 50  0000 C CNN
+F 2 "" H 1250 3810 50  0001 C CNN
+F 3 "~" H 1250 3810 50  0001 C CNN
+F 4 "V" H 1200 3850 50  0001 C CNN "Spice_Primitive"
+F 5 "sin(0 24 60 0 0)" H 1200 3850 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 1200 3850 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    1200 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 3950 1500 4450
+Wire Wire Line
+	1500 3750 1850 3750
+$Comp
+L Device:R R2
+U 1 1 5FFD7045
+P 2000 4050
+F 0 "R2" V 1793 4050 50  0000 C CNN
+F 1 "10meg" V 1884 4050 50  0000 C CNN
+F 2 "" V 1930 4050 50  0001 C CNN
+F 3 "~" H 2000 4050 50  0001 C CNN
+	1    2000 4050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2150 4050 2150 3950
+Wire Wire Line
+	1850 4050 1850 3750
+Connection ~ 1850 3750
+$Comp
+L Device:C C2
+U 1 1 5FFDF0A4
+P 4050 4100
+F 0 "C2" H 4165 4146 50  0000 L CNN
+F 1 "100uF" H 4165 4055 50  0000 L CNN
+F 2 "" H 4088 3950 50  0001 C CNN
+F 3 "~" H 4050 4100 50  0001 C CNN
+F 4 "C" H 4050 4100 50  0001 C CNN "Spice_Primitive"
+F 5 "100u" H 4050 4100 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 4050 4100 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    4050 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4050 3950 4050 3850
+Wire Wire Line
+	4050 4400 4050 4250
+Connection ~ 4050 4400
+$Comp
+L Device:D D1
+U 1 1 5FFD05F1
+P 2600 3800
+F 0 "D1" V 2646 3720 50  0000 R CNN
+F 1 "D" V 2555 3720 50  0000 R CNN
+F 2 "" H 2600 3800 50  0001 C CNN
+F 3 "~" H 2600 3800 50  0001 C CNN
+	1    2600 3800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D2
+U 1 1 5FFD10EF
+P 2600 4100
+F 0 "D2" V 2646 4020 50  0000 R CNN
+F 1 "D" V 2555 4020 50  0000 R CNN
+F 2 "" H 2600 4100 50  0001 C CNN
+F 3 "~" H 2600 4100 50  0001 C CNN
+	1    2600 4100
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2600 4250 2800 4250
+Wire Wire Line
+	2600 3950 2150 3950
+Connection ~ 2150 3950
+Wire Wire Line
+	2150 3950 2150 3750
+Wire Wire Line
+	2950 3950 3300 3950
+Wire Wire Line
+	3300 3950 3300 4450
+Wire Wire Line
+	2950 3650 2750 3650
+Wire Wire Line
+	2800 4250 2800 4400
+Connection ~ 2800 4250
+Wire Wire Line
+	2800 4250 2950 4250
+Wire Wire Line
+	2750 3650 2750 3550
+Wire Wire Line
+	2750 3550 3350 3550
+Wire Wire Line
+	3350 3550 3350 3850
+Wire Wire Line
+	3350 3850 4050 3850
+Connection ~ 2750 3650
+Wire Wire Line
+	2750 3650 2600 3650
+$Comp
+L Device:D D3
+U 1 1 5FFD8759
+P 2950 3800
+F 0 "D3" V 2996 3720 50  0000 R CNN
+F 1 "D" V 2905 3720 50  0000 R CNN
+F 2 "" H 2950 3800 50  0001 C CNN
+F 3 "~" H 2950 3800 50  0001 C CNN
+	1    2950 3800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D4
+U 1 1 5FFD8ACD
+P 2950 4100
+F 0 "D4" V 2996 4020 50  0000 R CNN
+F 1 "D" V 2905 4020 50  0000 R CNN
+F 2 "" H 2950 4100 50  0001 C CNN
+F 3 "~" H 2950 4100 50  0001 C CNN
+	1    2950 4100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5FFE33D7
+P 4450 4100
+F 0 "R1" V 4243 4100 50  0000 C CNN
+F 1 "500" V 4334 4100 50  0000 C CNN
+F 2 "" V 4380 4100 50  0001 C CNN
+F 3 "~" H 4450 4100 50  0001 C CNN
+F 4 "R" H 4450 4100 50  0001 C CNN "Spice_Primitive"
+F 5 "500" H 4450 4100 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 4450 4100 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    4450 4100
+	-1   0    0    1   
+$EndComp
+Connection ~ 2950 3950
+Connection ~ 2600 3950
+Connection ~ 4050 3850
+Wire Wire Line
+	4450 3850 4450 3950
+Wire Wire Line
+	4050 3850 4450 3850
+Wire Wire Line
+	4450 4400 4450 4250
+Wire Wire Line
+	4050 4400 4450 4400
+$Comp
+L pspice:0 #GND?
+U 1 1 5FFFB918
+P 3550 4700
+F 0 "#GND?" H 3550 4600 50  0001 C CNN
+F 1 "0" H 3550 4789 50  0000 C CNN
+F 2 "" H 3550 4700 50  0001 C CNN
+F 3 "~" H 3550 4700 50  0001 C CNN
+	1    3550 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 4700 3550 4400
+Wire Wire Line
+	2800 4400 3550 4400
+Connection ~ 3550 4400
+Wire Wire Line
+	3550 4400 4050 4400
+Wire Wire Line
+	1500 4450 3300 4450
+$Comp
+L Device:R R?
+U 1 1 600047AB
+P 4950 4100
+F 0 "R?" H 5020 4146 50  0000 L CNN
+F 1 "968" H 5020 4055 50  0000 L CNN
+F 2 "" V 4880 4100 50  0001 C CNN
+F 3 "~" H 4950 4100 50  0001 C CNN
+	1    4950 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4450 3850 4950 3850
+Wire Wire Line
+	4950 3850 4950 3950
+Connection ~ 4450 3850
+Wire Wire Line
+	4450 4400 4950 4400
+Wire Wire Line
+	4950 4400 4950 4250
+Connection ~ 4450 4400
+$EndSCHEMATC
