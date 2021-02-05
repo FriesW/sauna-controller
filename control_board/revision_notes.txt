@@ -1,6 +1,8 @@
 Fix bridge rectifier pinout
 Check bridge rectifier footprint with actual part
 Thermal relief on linear reg ground
+Remove pulldown resistor on /RESET output from WDT
+Consider hooking /RESET up to only one logic gate input
 Reduce width of C1 pads
 Increase space between C2 and C3 to enable easier soldering
 Consider reducing length/long dimension of F1 & F2
