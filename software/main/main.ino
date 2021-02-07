@@ -41,7 +41,7 @@ void setup() {
 void loop() {
     kick();
 
-    bool st = (millis() / 5000 ) % 2;
+    bool st = (millis() / 200 ) % 2;
     digitalWrite(BD_LED, st);
     digitalWrite(P_RQST, st);
 }
