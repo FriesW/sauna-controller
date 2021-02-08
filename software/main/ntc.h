@@ -6,7 +6,7 @@ static uint ntc_temp_step = 5;
 
 // Each position is the voltage at ntc_start_temp + ntc_temp_step * index deg C
 // NTC, so ntc_lut[0] > ntc_lut[1]
-static float ntc_lut = {
+static float ntc_lut[] = {
 L(0.8054)
 L(0.6528)
 L(0.5324)

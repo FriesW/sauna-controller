@@ -12,6 +12,7 @@ typedef unsigned int uint;
 
 #include "ntc.h"
 
+
 void setup() {
     analogReference( EXTERNAL );
     pinMode(P_RQST, OUTPUT);
@@ -41,12 +42,35 @@ void setup() {
 
 }
 
+float a_ntc_ext = 0.0;
+float a_ntc_int = 0.0;
+float a_pot = 0.0;
+
 void loop() {
+    if( !cycle() ) return;
     kick();
+
+
+    anlg_read_avg( EXT_TEMP, &a_ntc_ext );
+    anlg_read_avg( INT_TEMP, &a_ntc_int );
+    anlg_read_avg( POT, &a_pot );
 
     bool st = (millis() / 200 ) % 2;
     digitalWrite(BD_LED, st);
     digitalWrite(P_RQST, st);
+}
+
+static bool cycle(){
+    static unsigned long last = 0;
+    if( last = 0 ) {
+        last = millis();
+        return true;
+    }
+    if( millis() - last < 10UL ) {
+        return false;
+    }
+    last += 10UL;
+    return true;
 }
 
 
@@ -67,13 +91,14 @@ static void kick() {
 static void anlg_read_avg(uint pin, float * val) {
     #define AREF_V (2.5)
     if( *val <= 0.0 || *val >= AREF_V )
-        *val = 0.0;
+        *val = (float)analogRead(pin);
     float v = (float)analogRead(pin);
     v = v / ((float)(1<<10) - 1.0) * AREF_V;
     *val = v * 0.1 + *val * 0.9;
     #undef AREF_V
 }
 
+// Return temperature in deg C, readings saturate at ends of range
 static float volt_ntc_convert(float v) {
     if( v > ntc_lut[0] )
         return ntc_start_temp;
@@ -92,4 +117,13 @@ static float volt_ntc_convert(float v) {
     return 0.0;
 }
 
-//static float volt_pot_convert(float v)
+// Return 0.0 - 1.0 for pot position
+static float volt_pot_convert(float v) {
+    if (v <= 0.0) return 0.0;
+    if (v >= 2.5) return 1.0;
+    float p = ( 330.0 * v / (5.0 - v) ) / 300.0;
+    if (p >= 1.0) return 1.0;
+    if (p <= 0.0) return 0.0;
+    return p;
+}
+
