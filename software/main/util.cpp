@@ -13,7 +13,7 @@ void set_relay(bool target) {
 }
 
 bool cycle(){
-    static unsigned long last = 0;
+    static ulong last = 0;
     if( last = 0 ) {
         last = millis();
         return true;
@@ -27,8 +27,8 @@ bool cycle(){
 
 
 void kick() {
-    static unsigned long last = 0;
-    unsigned long t = millis();
+    static ulong last = 0;
+    ulong t = millis();
     // max system runtime
     if( t > ( 1000UL * 60UL * 100UL ) )
         halt();
