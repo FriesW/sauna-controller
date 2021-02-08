@@ -10,6 +10,7 @@
 
 typedef unsigned int uint;
 
+#include "thermostat.h"
 #include "ntc.h"
 
 
@@ -47,6 +48,7 @@ float a_ntc_pcb = 0.0;
 float a_pot = 0.0;
 
 void loop() {
+    update();
     if( !cycle() ) return;
     kick();
 
@@ -58,7 +60,9 @@ void loop() {
         halt();
     }
 
+    float t = a_pot * (90.0 - 65.0) + 65.0;
 
+    target(t, a_ntc_room);
 }
 
 static void halt() {
