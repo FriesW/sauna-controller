@@ -4,8 +4,8 @@
 
 #define BD_LED (13)
 
-#define INT_TEMP (16)
-#define EXT_TEMP (15)
+#define PCB_TEMP (16)
+#define ROOM_TEMP (15)
 #define POT (14)
 
 typedef unsigned int uint;
@@ -18,8 +18,8 @@ void setup() {
     pinMode(P_RQST, OUTPUT);
     pinMode(SR_RST, OUTPUT);
     pinMode(WD_KICK, OUTPUT);
-    pinMode(INT_TEMP, INPUT);
-    pinMode(EXT_TEMP, INPUT);
+    pinMode(PCB_TEMP, INPUT);
+    pinMode(ROOM_TEMP, INPUT);
     pinMode(POT, INPUT);
     pinMode(BD_LED, OUTPUT);
 
@@ -42,22 +42,33 @@ void setup() {
 
 }
 
-float a_ntc_ext = 0.0;
-float a_ntc_int = 0.0;
+float a_ntc_room = 0.0;
+float a_ntc_pcb = 0.0;
 float a_pot = 0.0;
 
 void loop() {
     if( !cycle() ) return;
     kick();
 
-
-    anlg_read_avg( EXT_TEMP, &a_ntc_ext );
-    anlg_read_avg( INT_TEMP, &a_ntc_int );
+    anlg_read_avg( PCB_TEMP, &a_ntc_pcb );
+    anlg_read_avg( ROOM_TEMP, &a_ntc_room );
     anlg_read_avg( POT, &a_pot );
 
-    bool st = (millis() / 200 ) % 2;
-    digitalWrite(BD_LED, st);
-    digitalWrite(P_RQST, st);
+    if( a_ntc_pcb > 45.0 ) {
+        halt();
+    }
+
+
+}
+
+static void halt() {
+    set(false);
+    while(true);
+}
+
+static void set(bool target) {
+    digitalWrite(BD_LED, target);
+    digitalWrite(P_RQST, target);
 }
 
 static bool cycle(){
@@ -78,8 +89,8 @@ static void kick() {
     static unsigned long last = 0;
     unsigned long t = millis();
     // max system runtime
-    //if( t > ( 1000UL * 60UL * 1UL ) )
-    //    while(true);
+    if( t > ( 1000UL * 60UL * 100UL ) )
+        halt();
     // min WD timeout 1 sec
     if( (t - last) < 800UL )
         return;
