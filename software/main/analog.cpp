@@ -5,11 +5,12 @@
 
 void anlg_read_avg(uint pin, float * val) {
     #define AREF_V (2.5)
-    if( *val <= 0.0 || *val >= AREF_V )
-        *val = (float)analogRead(pin);
     float v = (float)analogRead(pin);
     v = v / ((float)(1<<10) - 1.0) * AREF_V;
-    *val = v * 0.1 + *val * 0.9;
+    if( *val <= 0.0 || *val >= AREF_V )
+        *val = v;
+    else
+        *val = v * 0.1 + (*val) * 0.9;
     #undef AREF_V
 }
  
