@@ -14,7 +14,7 @@ void set_relay(bool target) {
 
 bool cycle(){
     static ulong last = 0;
-    if( last = 0 ) {
+    if( last == 0 ) {
         last = millis();
         return true;
     }
