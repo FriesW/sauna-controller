@@ -14,3 +14,8 @@ Evaluate position of J1, possibly move it up
 Incrase size of RV1 pin holes
 Test screw fitmet, especially around nano
 
+Analog taps:
+IO pin between 1k resistors on thermister pullup
+AREF <-> 330 <-> IO pin
+AREF <-> 1k <-> IO pin
+
