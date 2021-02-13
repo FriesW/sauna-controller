@@ -13,6 +13,7 @@ Consider placing cap between /RESET and GND, 2.2uF should be ok
 Remove polyfuse F5 or place it before linear reg
     Done, removed
 Reduce width of C1 pads
+    Done
 Increase space between C2 and C3 to enable easier soldering
 Consider reducing length/long dimension of F1 & F2
     Done, new footprint
