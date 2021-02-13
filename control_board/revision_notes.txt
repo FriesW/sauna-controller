@@ -1,21 +1,33 @@
 Fix bridge rectifier pinout
-	Done, no change needed - Check bridge rectifier footprint with actual part
+    Done, footprint 2 -> datasheet 3
+Check bridge rectifier footprint with actual part
+	Done, no change needed
 Thermal relief on linear reg ground
 Remove pulldown resistor on /RESET output from WDT
+    Done, removed
 Consider hooking /RESET up to only one logic gate input
+    Done, decided not to: ok on modified rev 1, input impedance order of magnitude high enough
 Consider placing cap between /RESET and GND, 2.2uF should be ok
+    Done, placed
 Remove polyfuse F5 or place it before linear reg
+    Done, removed
 Reduce width of C1 pads
 Increase space between C2 and C3 to enable easier soldering
 Consider reducing length/long dimension of F1 & F2
+    Done, new footprint
 Consider moving RV1 to the right
 Clear other-net vias from space between cap pins
 Evaluate position of J1, possibly move it up
 Incrase size of RV1 pin holes
 Test screw fitmet, especially around nano
+    Done, fit is good, might be problematic if arduino mounted closer
+Round corners of PCB
 
 Analog taps:
 IO pin between 1k resistors on thermister pullup
+    Done
 AREF <-> 330 <-> IO pin
+    Done
 AREF <-> 1k <-> IO pin
+    Done
 

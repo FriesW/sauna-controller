@@ -19,7 +19,7 @@ U 1 1 5FFD1BEA
 P 1100 1850
 F 0 "F1" V 903 1850 50  0000 C CNN
 F 1 "Fuse" V 994 1850 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_Power_L20.0mm_W6.4mm_P22.40mm" V 1030 1850 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P12.70mm_Horizontal" V 1030 1850 50  0001 C CNN
 F 3 "~" H 1100 1850 50  0001 C CNN
 	1    1100 1850
 	0    1    1    0   
@@ -30,7 +30,7 @@ U 1 1 5FFD1F73
 P 1100 1250
 F 0 "F2" V 903 1250 50  0000 C CNN
 F 1 "Fuse" V 994 1250 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_Power_L20.0mm_W6.4mm_P22.40mm" V 1030 1250 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P12.70mm_Horizontal" V 1030 1250 50  0001 C CNN
 F 3 "~" H 1100 1250 50  0001 C CNN
 	1    1100 1250
 	0    1    1    0   
@@ -146,27 +146,12 @@ F 3 "~" H 5000 1850 50  0001 C CNN
 	1    5000 1850
 	0    1    1    0   
 $EndComp
-$Comp
-L Device:Polyfuse F5
-U 1 1 600316F0
-P 6500 1850
-F 0 "F5" V 6725 1850 50  0000 C CNN
-F 1 "Polyfuse" V 6634 1850 50  0000 C CNN
-F 2 "Fuse:Fuse_2920_7451Metric_Pad2.10x5.45mm_HandSolder" H 6550 1650 50  0001 L CNN
-F 3 "~" H 6500 1850 50  0001 C CNN
-	1    6500 1850
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	4650 1850 4850 1850
 Connection ~ 4250 2150
 Wire Wire Line
 	5900 2150 6950 2150
 Connection ~ 5900 2150
-Wire Wire Line
-	6650 1850 6950 1850
-Wire Wire Line
-	6200 1850 6350 1850
 $Comp
 L power:+12V #PWR03
 U 1 1 6004FE82
@@ -459,17 +444,6 @@ Wire Wire Line
 	1700 4650 2000 4650
 Connection ~ 2000 4650
 $Comp
-L Device:D_Bridge_+A-A D1
-U 1 1 60134750
-P 1850 1550
-F 0 "D1" H 2194 1596 50  0000 L CNN
-F 1 "D_Bridge_+A-A" H 2194 1505 50  0000 L CNN
-F 2 "Diode_SMD:Diode_Bridge_Diotec_ABS" H 1850 1550 50  0001 C CNN
-F 3 "~" H 1850 1550 50  0001 C CNN
-	1    1850 1550
-	1    0    0    -1  
-$EndComp
-$Comp
 L 74xx:74LS02 U4
 U 1 1 6015098A
 P 4700 8950
@@ -715,11 +689,6 @@ NoConn ~ 1000 7750
 NoConn ~ 1000 7650
 NoConn ~ 1000 7550
 NoConn ~ 1000 7350
-NoConn ~ 1000 7250
-NoConn ~ 1000 7150
-NoConn ~ 1000 7050
-NoConn ~ 1000 6950
-NoConn ~ 1000 6850
 $Comp
 L power:GND #PWR035
 U 1 1 6036D386
@@ -927,23 +896,12 @@ $EndComp
 $Comp
 L power:GND #PWR020
 U 1 1 6091E95E
-P 2450 6750
-F 0 "#PWR020" H 2450 6500 50  0001 C CNN
-F 1 "GND" H 2455 6577 50  0000 C CNN
-F 2 "" H 2450 6750 50  0001 C CNN
-F 3 "" H 2450 6750 50  0001 C CNN
-	1    2450 6750
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+5V #PWR017
-U 1 1 6091EFD9
-P 2450 6150
-F 0 "#PWR017" H 2450 6000 50  0001 C CNN
-F 1 "+5V" H 2465 6323 50  0000 C CNN
-F 2 "" H 2450 6150 50  0001 C CNN
-F 3 "" H 2450 6150 50  0001 C CNN
-	1    2450 6150
+P 2300 6750
+F 0 "#PWR020" H 2300 6500 50  0001 C CNN
+F 1 "GND" H 2305 6577 50  0000 C CNN
+F 2 "" H 2300 6750 50  0001 C CNN
+F 3 "" H 2300 6750 50  0001 C CNN
+	1    2300 6750
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -957,8 +915,6 @@ F 3 "~" H 2300 6600 50  0001 C CNN
 	1    2300 6600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2450 6750 2300 6750
 Wire Wire Line
 	2300 6450 2450 6450
 Wire Wire Line
@@ -1106,12 +1062,12 @@ $EndComp
 $Comp
 L Device:R_Pack08_Split RN2
 U 7 1 60C4FE74
-P 3400 9700
-F 0 "RN2" H 3488 9746 50  0000 L CNN
-F 1 "R_Pack08_Split" H 3488 9655 50  0001 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 3320 9700 50  0001 C CNN
-F 3 "~" H 3400 9700 50  0001 C CNN
-	7    3400 9700
+P 7600 4500
+F 0 "RN2" H 7688 4546 50  0000 L CNN
+F 1 "R_Pack08_Split" H 7688 4455 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 7520 4500 50  0001 C CNN
+F 3 "~" H 7600 4500 50  0001 C CNN
+	7    7600 4500
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -1150,13 +1106,13 @@ $EndComp
 $Comp
 L Device:R_Pack08_Split RN1
 U 3 1 60CA6899
-P 2450 6600
-F 0 "RN1" V 2550 6500 50  0000 L CNN
-F 1 "R_Pack08_Split" H 2538 6555 50  0001 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 2370 6600 50  0001 C CNN
-F 3 "~" H 2450 6600 50  0001 C CNN
-	3    2450 6600
-	1    0    0    -1  
+P 2650 6300
+F 0 "RN1" V 2550 6200 50  0000 L CNN
+F 1 "R_Pack08_Split" H 2738 6255 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 2570 6300 50  0001 C CNN
+F 3 "~" H 2650 6300 50  0001 C CNN
+	3    2650 6300
+	-1   0    0    1   
 $EndComp
 $Comp
 L Device:R_Pack08_Split RN1
@@ -1382,7 +1338,7 @@ F 3 "~" H 4450 3500 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 NoConn ~ 7600 4350
-Text Notes 6800 4650 0    50   ~ 0
+Text Notes 6500 4650 0    50   ~ 0
 RN1 -> 1k\nRN2 -> 1k\nRN3 -> 330
 $Comp
 L Connector:Conn_01x08_Male U5
@@ -1426,13 +1382,13 @@ Wire Wire Line
 $Comp
 L Device:R_Pack08_Split RN3
 U 7 1 612D28C1
-P 7600 4500
-F 0 "RN3" H 7688 4546 50  0000 L CNN
-F 1 "R_Pack08_Split" H 7688 4455 50  0000 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 7520 4500 50  0001 C CNN
-F 3 "~" H 7600 4500 50  0001 C CNN
-	7    7600 4500
-	1    0    0    -1  
+P 2850 6300
+F 0 "RN3" V 2750 6200 50  0000 L CNN
+F 1 "R_Pack08_Split" H 2938 6255 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 2770 6300 50  0001 C CNN
+F 3 "~" H 2850 6300 50  0001 C CNN
+	7    2850 6300
+	-1   0    0    1   
 $EndComp
 $Comp
 L Device:R_Pack08_Split RN3
@@ -1493,8 +1449,6 @@ Text Label 5450 1850 0    50   ~ 0
 hc_02
 Text Label 6250 1850 0    50   ~ 0
 hc_03
-Text Label 6700 1850 0    50   ~ 0
-hc_04
 Text Label 2750 4650 0    50   ~ 0
 hc_05
 Connection ~ 3750 8650
@@ -1549,7 +1503,6 @@ F 3 "~" H 2850 7400 50  0001 C CNN
 $EndComp
 Connection ~ 2450 5000
 Connection ~ 2450 6450
-Connection ~ 2450 6750
 Wire Wire Line
 	3950 8650 3750 8650
 $Comp
@@ -1584,4 +1537,53 @@ Wire Wire Line
 Connection ~ 3400 9550
 Wire Wire Line
 	3400 9550 3550 9550
+$Comp
+L Device:C C12
+U 1 1 6039BB5E
+P 3400 9700
+F 0 "C12" H 3515 9746 50  0000 L CNN
+F 1 "2.2u" H 3515 9655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 3438 9550 50  0001 C CNN
+F 3 "~" H 3400 9700 50  0001 C CNN
+	1    3400 9700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6200 1850 6950 1850
+Text Label 1000 6850 2    50   ~ 0
+th1_tap
+Text Label 1000 6950 2    50   ~ 0
+th2_tap
+Text Label 3450 7450 0    50   ~ 0
+th2_tap
+Text Label 2850 7550 0    50   ~ 0
+th1_tap
+Text Label 2450 6150 1    50   ~ 0
+aref_1k1
+Wire Wire Line
+	2650 6450 2450 6450
+Text Label 2850 6150 1    50   ~ 0
+aref_330
+Text Label 1000 7250 2    50   ~ 0
+aref_330
+Text Label 1000 7150 2    50   ~ 0
+aref_1k2
+Text Label 1000 7050 2    50   ~ 0
+aref_1k1
+Text Label 2650 6150 1    50   ~ 0
+raref_1k2
+Wire Wire Line
+	2650 6450 2850 6450
+Connection ~ 2650 6450
+$Comp
+L Device:D_Bridge_+-AA D1
+U 1 1 604BA286
+P 1850 1550
+F 0 "D1" H 2194 1596 50  0000 L CNN
+F 1 "D_Bridge_+-AA" H 2194 1505 50  0000 L CNN
+F 2 "Diode_SMD:Diode_Bridge_Diotec_ABS" H 1850 1550 50  0001 C CNN
+F 3 "~" H 1850 1550 50  0001 C CNN
+	1    1850 1550
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
