@@ -15,10 +15,13 @@ Remove polyfuse F5 or place it before linear reg
 Reduce width of C1 pads
     Done
 Increase space between C2 and C3 to enable easier soldering
+    Done
 Consider reducing length/long dimension of F1 & F2
     Done, new footprint
 Consider moving RV1 to the right
+    Done
 Clear other-net vias from space between cap pins
+    Done
 Evaluate position of J1, possibly move it up
     Done, rotated connector
 Incrase size of RV1 pin holes
