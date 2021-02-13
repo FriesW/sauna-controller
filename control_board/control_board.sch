@@ -94,12 +94,12 @@ Wire Wire Line
 $Comp
 L Regulator_Linear:MC78M05_TO252 U1
 U 1 1 6001E56B
-P 5900 1850
-F 0 "U1" H 5900 2092 50  0000 C CNN
-F 1 "MC78M05_TO252" H 5900 2001 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:TO-252-2" H 5900 2075 50  0001 C CIN
-F 3 "https://www.onsemi.com/pub/Collateral/MC78M00-D.PDF" H 5900 1800 50  0001 C CNN
-	1    5900 1850
+P 6150 1850
+F 0 "U1" H 6150 2092 50  0000 C CNN
+F 1 "MC78M05_TO252" H 6150 2001 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:TO-252-2" H 6150 2075 50  0001 C CIN
+F 3 "https://www.onsemi.com/pub/Collateral/MC78M00-D.PDF" H 6150 1800 50  0001 C CNN
+	1    6150 1850
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -115,8 +115,6 @@ F 3 "http://www.tracopower.com/products/tsr1.pdf" H 4250 1950 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5150 1850 5350 1850
-Wire Wire Line
-	5350 1850 5600 1850
 Connection ~ 5350 1850
 $Comp
 L Device:CP C4
@@ -143,9 +141,6 @@ $EndComp
 Wire Wire Line
 	4650 1850 4850 1850
 Connection ~ 4250 2150
-Wire Wire Line
-	5900 2150 6950 2150
-Connection ~ 5900 2150
 $Comp
 L power:+12V #PWR03
 U 1 1 6004FE82
@@ -858,7 +853,7 @@ $EndComp
 Wire Wire Line
 	4850 2150 5350 2150
 Wire Wire Line
-	5350 2150 5900 2150
+	5350 2150 5700 2150
 Connection ~ 5350 2150
 $Comp
 L Device:CP C3
@@ -948,17 +943,17 @@ $EndComp
 $Comp
 L power:+5V #PWR09
 U 1 1 600C4C55
-P 5650 3350
-F 0 "#PWR09" H 5650 3200 50  0001 C CNN
-F 1 "+5V" H 5665 3523 50  0000 C CNN
-F 2 "" H 5650 3350 50  0001 C CNN
-F 3 "" H 5650 3350 50  0001 C CNN
-	1    5650 3350
+P 5750 3350
+F 0 "#PWR09" H 5750 3200 50  0001 C CNN
+F 1 "+5V" H 5765 3523 50  0000 C CNN
+F 2 "" H 5750 3350 50  0001 C CNN
+F 3 "" H 5750 3350 50  0001 C CNN
+	1    5750 3350
 	1    0    0    -1  
 $EndComp
-Text Label 6000 3350 1    50   ~ 0
+Text Label 6050 3350 1    50   ~ 0
 pot_a
-Text Label 5800 3350 1    50   ~ 0
+Text Label 5950 3350 1    50   ~ 0
 sensor_a
 Connection ~ 6200 5550
 Connection ~ 6200 6550
@@ -1306,10 +1301,6 @@ F 3 "" H 2700 9250 50  0001 C CNN
 	1    2700 9250
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	6050 3350 5950 3350
-Wire Wire Line
-	5850 3350 5750 3350
 $Comp
 L Device:R_Pack08_Split RN3
 U 7 1 612D28C1
@@ -1335,13 +1326,13 @@ $EndComp
 $Comp
 L Device:R_Pack08_Split RN1
 U 4 1 60CA5856
-P 3850 6550
-F 0 "RN1" V 3750 6450 50  0000 L CNN
-F 1 "R_Pack08_Split" H 3938 6505 50  0001 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 3770 6550 50  0001 C CNN
-F 3 "~" H 3850 6550 50  0001 C CNN
-	4    3850 6550
-	-1   0    0    1   
+P 7600 4500
+F 0 "RN1" V 7500 4400 50  0000 L CNN
+F 1 "R_Pack08_Split" H 7688 4455 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 7520 4500 50  0001 C CNN
+F 3 "~" H 7600 4500 50  0001 C CNN
+	4    7600 4500
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:+5V #PWR0102
@@ -1374,7 +1365,7 @@ Text Label 4700 1850 0    50   ~ 0
 hc_01
 Text Label 5450 1850 0    50   ~ 0
 hc_02
-Text Label 6250 1850 0    50   ~ 0
+Text Label 6700 1850 0    50   ~ 0
 hc_03
 Text Label 2750 4650 0    50   ~ 0
 hc_05
@@ -1474,8 +1465,6 @@ F 3 "~" H 3400 9700 50  0001 C CNN
 	1    3400 9700
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6200 1850 6950 1850
 Text Label 1000 7050 2    50   ~ 0
 th1_tap
 Text Label 1000 7150 2    50   ~ 0
@@ -1586,4 +1575,49 @@ Wire Wire Line
 	2650 6450 2850 6450
 Text Label 2650 6150 1    50   ~ 0
 aref_1k2
+$Comp
+L Device:C C13
+U 1 1 60BEF2F8
+P 5700 2000
+F 0 "C13" H 5550 2100 50  0000 L CNN
+F 1 "2.2u" H 5550 1900 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 5738 1850 50  0001 C CNN
+F 3 "~" H 5700 2000 50  0001 C CNN
+	1    5700 2000
+	1    0    0    -1  
+$EndComp
+Connection ~ 5700 2150
+$Comp
+L Device:C C14
+U 1 1 60BFDBB0
+P 6700 2000
+F 0 "C14" H 6550 2100 50  0000 L CNN
+F 1 "2.2u" H 6550 1900 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 6738 1850 50  0001 C CNN
+F 3 "~" H 6700 2000 50  0001 C CNN
+	1    6700 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 1850 6950 1850
+Connection ~ 6700 2150
+Wire Wire Line
+	6700 2150 6950 2150
+Wire Wire Line
+	5700 2150 6150 2150
+Connection ~ 6150 2150
+Wire Wire Line
+	6150 2150 6700 2150
+Wire Wire Line
+	6700 1850 6450 1850
+Connection ~ 6700 1850
+Wire Wire Line
+	5850 1850 5700 1850
+Wire Wire Line
+	5350 1850 5700 1850
+Connection ~ 5700 1850
+Text Label 5650 3350 1    50   ~ 0
+pot_a
+Text Label 5850 3350 1    50   ~ 0
+sensor_a
 $EndSCHEMATC
