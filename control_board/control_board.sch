@@ -16,23 +16,23 @@ $EndDescr
 $Comp
 L Device:Fuse F1
 U 1 1 5FFD1BEA
-P 1100 1850
-F 0 "F1" V 903 1850 50  0000 C CNN
-F 1 "Fuse" V 994 1850 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P12.70mm_Horizontal" V 1030 1850 50  0001 C CNN
-F 3 "~" H 1100 1850 50  0001 C CNN
-	1    1100 1850
+P 1100 1250
+F 0 "F1" V 903 1250 50  0000 C CNN
+F 1 "Fuse" V 994 1250 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P12.70mm_Horizontal" V 1030 1250 50  0001 C CNN
+F 3 "~" H 1100 1250 50  0001 C CNN
+	1    1100 1250
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:Fuse F2
 U 1 1 5FFD1F73
-P 1100 1250
-F 0 "F2" V 903 1250 50  0000 C CNN
-F 1 "Fuse" V 994 1250 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P12.70mm_Horizontal" V 1030 1250 50  0001 C CNN
-F 3 "~" H 1100 1250 50  0001 C CNN
-	1    1100 1250
+P 1100 1850
+F 0 "F2" V 903 1850 50  0000 C CNN
+F 1 "Fuse" V 994 1850 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P12.70mm_Horizontal" V 1030 1850 50  0001 C CNN
+F 3 "~" H 1100 1850 50  0001 C CNN
+	1    1100 1850
 	0    1    1    0   
 $EndComp
 $Comp
@@ -44,7 +44,7 @@ F 1 "Varistor" H 1353 1505 50  0000 L CNN
 F 2 "Varistor:RV_Disc_D7mm_W3.6mm_P5mm" V 1180 1550 50  0001 C CNN
 F 3 "~" H 1250 1550 50  0001 C CNN
 	1    1250 1550
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 $Comp
 L Device:L L1
@@ -74,12 +74,6 @@ Wire Wire Line
 	1250 1250 1250 1400
 Wire Wire Line
 	1250 1700 1250 1850
-Wire Wire Line
-	1250 1850 1850 1850
-Connection ~ 1250 1850
-Wire Wire Line
-	1250 1250 1850 1250
-Connection ~ 1250 1250
 Wire Wire Line
 	950  1250 700  1250
 Wire Wire Line
@@ -241,23 +235,23 @@ Connection ~ 2750 5300
 $Comp
 L power:GNDPWR #PWR02
 U 1 1 6006AC2C
-P 700 1850
-F 0 "#PWR02" H 700 1650 50  0001 C CNN
-F 1 "GNDPWR" H 704 1696 50  0000 C CNN
-F 2 "" H 700 1800 50  0001 C CNN
-F 3 "" H 700 1800 50  0001 C CNN
-	1    700  1850
+P 700 1250
+F 0 "#PWR02" H 700 1050 50  0001 C CNN
+F 1 "GNDPWR" H 704 1096 50  0000 C CNN
+F 2 "" H 700 1200 50  0001 C CNN
+F 3 "" H 700 1200 50  0001 C CNN
+	1    700  1250
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:AC #PWR01
 U 1 1 6006B79F
-P 700 1250
-F 0 "#PWR01" H 700 1150 50  0001 C CNN
-F 1 "AC" H 700 1525 50  0000 C CNN
-F 2 "" H 700 1250 50  0001 C CNN
-F 3 "" H 700 1250 50  0001 C CNN
-	1    700  1250
+P 700 1850
+F 0 "#PWR01" H 700 1750 50  0001 C CNN
+F 1 "AC" H 700 2125 50  0000 C CNN
+F 2 "" H 700 1850 50  0001 C CNN
+F 3 "" H 700 1850 50  0001 C CNN
+	1    700  1850
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1409,12 +1403,8 @@ F 3 "" H 7600 4650 50  0001 C CNN
 $EndComp
 Text Label 750  1250 0    50   ~ 0
 hv_00
-Text Label 1450 1250 0    50   ~ 0
-hv_02
 Text Label 750  1850 0    50   ~ 0
 hv_01
-Text Label 1400 1850 0    50   ~ 0
-hv_03
 Text Label 2250 1850 0    50   ~ 0
 hv_04
 Text Label 3050 1850 0    50   ~ 0
@@ -1586,4 +1576,14 @@ Wire Wire Line
 	800  2650 1100 2650
 Wire Wire Line
 	800  2550 1100 2550
+Text Label 1300 1850 0    50   ~ 0
+hv_03
+Text Label 1300 1250 0    50   ~ 0
+hv_02
+Connection ~ 1250 1850
+Wire Wire Line
+	1250 1850 1850 1850
+Connection ~ 1250 1250
+Wire Wire Line
+	1250 1250 1850 1250
 $EndSCHEMATC
