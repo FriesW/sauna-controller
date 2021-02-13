@@ -457,12 +457,12 @@ $EndComp
 $Comp
 L 74xx:74LS02 U3
 U 4 1 60158579
-P 6300 8850
-F 0 "U3" H 6300 9175 50  0000 C CNN
-F 1 "74LS02" H 6300 9084 50  0000 C CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 6300 8850 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74ls02" H 6300 8850 50  0001 C CNN
-	4    6300 8850
+P 6900 8500
+F 0 "U3" H 6900 8825 50  0000 C CNN
+F 1 "74LS02" H 6900 8734 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 6900 8500 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74ls02" H 6900 8500 50  0001 C CNN
+	4    6900 8500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -714,13 +714,13 @@ $EndComp
 $Comp
 L 74xx:74LS02 U3
 U 3 1 603936E5
-P 6900 8500
-F 0 "U3" H 6900 8300 50  0000 C CNN
-F 1 "74LS02" H 6900 8734 50  0000 C CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 6900 8500 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74ls02" H 6900 8500 50  0001 C CNN
-	3    6900 8500
-	1    0    0    1   
+P 5700 8850
+F 0 "U3" H 5700 8650 50  0000 C CNN
+F 1 "74LS02" H 5700 9084 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 5700 8850 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74ls02" H 5700 8850 50  0001 C CNN
+	3    5700 8850
+	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74LS02 U3
@@ -784,12 +784,12 @@ Wire Wire Line
 $Comp
 L 74xx:74LS02 U3
 U 1 1 6038B569
-P 5700 8850
-F 0 "U3" H 5700 9175 50  0000 C CNN
-F 1 "74LS02" H 5700 9084 50  0000 C CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 5700 8850 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74ls02" H 5700 8850 50  0001 C CNN
-	1    5700 8850
+P 6300 8850
+F 0 "U3" H 6300 9175 50  0000 C CNN
+F 1 "74LS02" H 6300 9084 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 6300 8850 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74ls02" H 6300 8850 50  0001 C CNN
+	1    6300 8850
 	1    0    0    1   
 $EndComp
 Text Label 4300 8750 2    50   ~ 0
@@ -893,8 +893,6 @@ F 3 "~" H 2300 6600 50  0001 C CNN
 	1    2300 6600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2300 6450 2450 6450
 Wire Wire Line
 	2000 6850 2100 6850
 Wire Wire Line
@@ -1018,12 +1016,12 @@ Wire Wire Line
 $Comp
 L Device:R_Pack08_Split RN1
 U 2 1 60C44838
-P 2450 5150
-F 0 "RN1" H 2538 5196 50  0000 L CNN
-F 1 "R_Pack08_Split" H 2538 5105 50  0001 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 2370 5150 50  0001 C CNN
-F 3 "~" H 2450 5150 50  0001 C CNN
-	2    2450 5150
+P 2450 6300
+F 0 "RN1" V 2350 6200 50  0000 L CNN
+F 1 "R_Pack08_Split" H 2538 6255 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 2370 6300 50  0001 C CNN
+F 3 "~" H 2450 6300 50  0001 C CNN
+	2    2450 6300
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1040,46 +1038,24 @@ $EndComp
 $Comp
 L Device:R_Pack08_Split RN2
 U 7 1 60C4FE74
-P 7600 4500
-F 0 "RN2" H 7688 4546 50  0000 L CNN
-F 1 "R_Pack08_Split" H 7688 4455 50  0001 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 7520 4500 50  0001 C CNN
-F 3 "~" H 7600 4500 50  0001 C CNN
-	7    7600 4500
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R_Pack08_Split RN2
-U 1 1 60C51825
-P 5850 8350
-F 0 "RN2" H 5938 8396 50  0000 L CNN
-F 1 "R_Pack08_Split" H 5938 8305 50  0001 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 5770 8350 50  0001 C CNN
-F 3 "~" H 5850 8350 50  0001 C CNN
-	1    5850 8350
-	0    -1   -1   0   
+P 3750 8500
+F 0 "RN2" H 3838 8546 50  0000 L CNN
+F 1 "R_Pack08_Split" H 3838 8455 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 3670 8500 50  0001 C CNN
+F 3 "~" H 3750 8500 50  0001 C CNN
+	7    3750 8500
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R_Pack08_Split RN2
 U 5 1 60C53192
-P 5000 9600
-F 0 "RN2" V 4900 9600 50  0000 C CNN
-F 1 "R_Pack08_Split" V 4884 9600 50  0001 C CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 4920 9600 50  0001 C CNN
-F 3 "~" H 5000 9600 50  0001 C CNN
-	5    5000 9600
+P 4200 9000
+F 0 "RN2" V 4100 9000 50  0000 C CNN
+F 1 "R_Pack08_Split" V 4084 9000 50  0001 C CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 4120 9000 50  0001 C CNN
+F 3 "~" H 4200 9000 50  0001 C CNN
+	5    4200 9000
 	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R_Pack08_Split RN1
-U 1 1 60C58123
-P 2300 5000
-F 0 "RN1" V 2093 5000 50  0000 C CNN
-F 1 "R_Pack08_Split" V 2184 5000 50  0001 C CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 2220 5000 50  0001 C CNN
-F 3 "~" H 2300 5000 50  0001 C CNN
-	1    2300 5000
-	0    1    1    0   
 $EndComp
 $Comp
 L Device:R_Pack08_Split RN1
@@ -1090,7 +1066,7 @@ F 1 "R_Pack08_Split" H 2738 6255 50  0001 L CNN
 F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 2570 6300 50  0001 C CNN
 F 3 "~" H 2650 6300 50  0001 C CNN
 	3    2650 6300
-	-1   0    0    1   
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R_Pack08_Split RN1
@@ -1101,28 +1077,28 @@ F 1 "R_Pack08_Split" H 3538 7255 50  0001 L CNN
 F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 3370 7300 50  0001 C CNN
 F 3 "~" H 3450 7300 50  0001 C CNN
 	8    3450 7300
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 $Comp
 L Device:R_Pack08_Split RN1
 U 6 1 60CA8167
-P 2850 7700
-F 0 "RN1" V 2700 7600 50  0000 L CNN
-F 1 "R_Pack08_Split" H 2938 7655 50  0001 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 2770 7700 50  0001 C CNN
-F 3 "~" H 2850 7700 50  0001 C CNN
-	6    2850 7700
-	1    0    0    -1  
+P 2850 7400
+F 0 "RN1" V 2700 7300 50  0000 L CNN
+F 1 "R_Pack08_Split" H 2938 7355 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 2770 7400 50  0001 C CNN
+F 3 "~" H 2850 7400 50  0001 C CNN
+	6    2850 7400
+	-1   0    0    1   
 $EndComp
 $Comp
 L Device:R_Pack08_Split RN1
 U 5 1 60CAA263
-P 3450 7600
-F 0 "RN1" V 3600 7500 50  0000 L CNN
-F 1 "R_Pack08_Split" H 3538 7555 50  0001 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 3370 7600 50  0001 C CNN
-F 3 "~" H 3450 7600 50  0001 C CNN
-	5    3450 7600
+P 2850 7700
+F 0 "RN1" V 3000 7600 50  0000 L CNN
+F 1 "R_Pack08_Split" H 2938 7655 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 2770 7700 50  0001 C CNN
+F 3 "~" H 2850 7700 50  0001 C CNN
+	5    2850 7700
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1137,7 +1113,6 @@ F 3 "~" H 4300 9700 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Connection ~ 5000 9450
-Connection ~ 6000 8350
 $Comp
 L power:+5V #PWR039
 U 1 1 60E70F7A
@@ -1252,57 +1227,35 @@ $EndComp
 $Comp
 L Device:R_Pack08_Split RN3
 U 3 1 612BF472
-P 6000 9100
-F 0 "RN3" H 5750 9200 50  0000 L CNN
-F 1 "R_Pack08_Split" H 6088 9055 50  0001 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 5920 9100 50  0001 C CNN
-F 3 "~" H 6000 9100 50  0001 C CNN
-	3    6000 9100
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R_Pack08_Split RN3
-U 4 1 612C17FD
-P 1700 3900
-F 0 "RN3" H 1788 3946 50  0000 L CNN
-F 1 "R_Pack08_Split" H 1788 3855 50  0000 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 1620 3900 50  0001 C CNN
-F 3 "~" H 1700 3900 50  0001 C CNN
-	4    1700 3900
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R_Pack08_Split RN3
-U 1 1 612C3258
-P 1700 4200
-F 0 "RN3" H 1788 4246 50  0000 L CNN
-F 1 "R_Pack08_Split" H 1788 4155 50  0000 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 1620 4200 50  0001 C CNN
-F 3 "~" H 1700 4200 50  0001 C CNN
-	1    1700 4200
+P 5900 9100
+F 0 "RN3" H 5650 9200 50  0000 L CNN
+F 1 "R_Pack08_Split" H 5988 9055 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 5820 9100 50  0001 C CNN
+F 3 "~" H 5900 9100 50  0001 C CNN
+	3    5900 9100
 	-1   0    0    1   
 $EndComp
 $Comp
 L Device:R_Pack08_Split RN3
 U 2 1 612C76DA
-P 5900 9100
-F 0 "RN3" H 5950 9200 50  0000 L CNN
-F 1 "R_Pack08_Split" H 5950 9500 50  0001 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 5820 9100 50  0001 C CNN
-F 3 "~" H 5900 9100 50  0001 C CNN
-	2    5900 9100
-	-1   0    0    1   
+P 2850 6300
+F 0 "RN3" V 2750 6200 50  0000 L CNN
+F 1 "R_Pack08_Split" H 2900 6700 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 2770 6300 50  0001 C CNN
+F 3 "~" H 2850 6300 50  0001 C CNN
+	2    2850 6300
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R_Pack08_Split RN3
 U 5 1 612C8EC0
-P 4450 3200
-F 0 "RN3" H 4538 3246 50  0000 L CNN
-F 1 "R_Pack08_Split" H 4538 3155 50  0000 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 4370 3200 50  0001 C CNN
-F 3 "~" H 4450 3200 50  0001 C CNN
-	5    4450 3200
-	-1   0    0    1   
+P 1700 4200
+F 0 "RN3" H 1788 4246 50  0000 L CNN
+F 1 "R_Pack08_Split" H 1788 4155 50  0000 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 1620 4200 50  0001 C CNN
+F 3 "~" H 1700 4200 50  0001 C CNN
+	5    1700 4200
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R_Pack08_Split RN3
@@ -1313,7 +1266,7 @@ F 1 "R_Pack08_Split" H 4538 3455 50  0000 L CNN
 F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 4370 3500 50  0001 C CNN
 F 3 "~" H 4450 3500 50  0001 C CNN
 	6    4450 3500
-	-1   0    0    1   
+	1    0    0    -1  
 $EndComp
 NoConn ~ 7600 4350
 Text Notes 6500 4650 0    50   ~ 0
@@ -1360,34 +1313,34 @@ Wire Wire Line
 $Comp
 L Device:R_Pack08_Split RN3
 U 7 1 612D28C1
-P 2850 6300
-F 0 "RN3" V 2750 6200 50  0000 L CNN
-F 1 "R_Pack08_Split" H 2938 6255 50  0001 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 2770 6300 50  0001 C CNN
-F 3 "~" H 2850 6300 50  0001 C CNN
-	7    2850 6300
+P 4450 3200
+F 0 "RN3" V 4350 3100 50  0000 L CNN
+F 1 "R_Pack08_Split" H 4538 3155 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 4370 3200 50  0001 C CNN
+F 3 "~" H 4450 3200 50  0001 C CNN
+	7    4450 3200
 	-1   0    0    1   
 $EndComp
 $Comp
 L Device:R_Pack08_Split RN3
 U 8 1 612D9C81
-P 4000 7200
-F 0 "RN3" H 4088 7246 50  0000 L CNN
-F 1 "R_Pack08_Split" H 4088 7155 50  0001 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 3920 7200 50  0001 C CNN
-F 3 "~" H 4000 7200 50  0001 C CNN
-	8    4000 7200
-	1    0    0    -1  
+P 1700 3900
+F 0 "RN3" H 1788 3946 50  0000 L CNN
+F 1 "R_Pack08_Split" H 1788 3855 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 1620 3900 50  0001 C CNN
+F 3 "~" H 1700 3900 50  0001 C CNN
+	8    1700 3900
+	-1   0    0    1   
 $EndComp
 $Comp
 L Device:R_Pack08_Split RN1
 U 4 1 60CA5856
-P 2450 6300
-F 0 "RN1" V 2350 6200 50  0000 L CNN
-F 1 "R_Pack08_Split" H 2538 6255 50  0001 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 2370 6300 50  0001 C CNN
-F 3 "~" H 2450 6300 50  0001 C CNN
-	4    2450 6300
+P 3850 6550
+F 0 "RN1" V 3750 6450 50  0000 L CNN
+F 1 "R_Pack08_Split" H 3938 6505 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 3770 6550 50  0001 C CNN
+F 3 "~" H 3850 6550 50  0001 C CNN
+	4    3850 6550
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -1444,39 +1397,38 @@ Wire Wire Line
 $Comp
 L Device:R_Pack08_Split RN2
 U 4 1 60C9C7AB
-P 5150 9150
-F 0 "RN2" H 4900 9200 50  0000 L CNN
-F 1 "R_Pack08_Split" H 5238 9105 50  0001 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 5070 9150 50  0001 C CNN
-F 3 "~" H 5150 9150 50  0001 C CNN
-	4    5150 9150
-	0    1    1    0   
+P 5000 9600
+F 0 "RN2" H 4750 9650 50  0000 L CNN
+F 1 "R_Pack08_Split" H 5088 9555 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 4920 9600 50  0001 C CNN
+F 3 "~" H 5000 9600 50  0001 C CNN
+	4    5000 9600
+	-1   0    0    1   
 $EndComp
 $Comp
 L Device:R_Pack08_Split RN2
 U 3 1 60C57079
-P 3750 8500
-F 0 "RN2" H 3838 8546 50  0000 L CNN
-F 1 "R_Pack08_Split" H 3838 8455 50  0001 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 3670 8500 50  0001 C CNN
-F 3 "~" H 3750 8500 50  0001 C CNN
-	3    3750 8500
-	1    0    0    -1  
+P 5150 9150
+F 0 "RN2" H 5238 9196 50  0000 L CNN
+F 1 "R_Pack08_Split" H 5238 9105 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 5070 9150 50  0001 C CNN
+F 3 "~" H 5150 9150 50  0001 C CNN
+	3    5150 9150
+	0    1    1    0   
 $EndComp
 Connection ~ 6000 9250
 $Comp
 L Device:R_Pack08_Split RN1
 U 7 1 60CA927C
-P 2850 7400
-F 0 "RN1" H 2550 7450 50  0000 L CNN
-F 1 "R_Pack08_Split" H 2938 7355 50  0001 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 2770 7400 50  0001 C CNN
-F 3 "~" H 2850 7400 50  0001 C CNN
-	7    2850 7400
-	-1   0    0    1   
+P 3450 7600
+F 0 "RN1" H 3150 7650 50  0000 L CNN
+F 1 "R_Pack08_Split" H 3538 7555 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 3370 7600 50  0001 C CNN
+F 3 "~" H 3450 7600 50  0001 C CNN
+	7    3450 7600
+	1    0    0    -1  
 $EndComp
 Connection ~ 2450 5000
-Connection ~ 2450 6450
 Wire Wire Line
 	3950 8650 3750 8650
 $Comp
@@ -1493,13 +1445,13 @@ $EndComp
 $Comp
 L Device:R_Pack08_Split RN2
 U 2 1 60C4E803
-P 4200 9000
-F 0 "RN2" H 4288 9046 50  0000 L CNN
-F 1 "R_Pack08_Split" H 4288 8955 50  0001 L CNN
-F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 4120 9000 50  0001 C CNN
-F 3 "~" H 4200 9000 50  0001 C CNN
-	2    4200 9000
-	-1   0    0    1   
+P 2450 5150
+F 0 "RN2" H 2538 5196 50  0000 L CNN
+F 1 "R_Pack08_Split" H 2538 5105 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 2370 5150 50  0001 C CNN
+F 3 "~" H 2450 5150 50  0001 C CNN
+	2    2450 5150
+	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	3750 8850 4200 8850
@@ -1524,9 +1476,9 @@ F 3 "~" H 3400 9700 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6200 1850 6950 1850
-Text Label 1000 6850 2    50   ~ 0
+Text Label 1000 7050 2    50   ~ 0
 th1_tap
-Text Label 1000 6950 2    50   ~ 0
+Text Label 1000 7150 2    50   ~ 0
 th2_tap
 Text Label 3450 7450 0    50   ~ 0
 th2_tap
@@ -1534,21 +1486,14 @@ Text Label 2850 7550 0    50   ~ 0
 th1_tap
 Text Label 2450 6150 1    50   ~ 0
 aref_1k1
-Wire Wire Line
-	2650 6450 2450 6450
 Text Label 2850 6150 1    50   ~ 0
 aref_330
 Text Label 1000 7250 2    50   ~ 0
 aref_330
-Text Label 1000 7150 2    50   ~ 0
+Text Label 1000 6950 2    50   ~ 0
 aref_1k2
-Text Label 1000 7050 2    50   ~ 0
+Text Label 1000 6850 2    50   ~ 0
 aref_1k1
-Text Label 2650 6150 1    50   ~ 0
-raref_1k2
-Wire Wire Line
-	2650 6450 2850 6450
-Connection ~ 2650 6450
 $Comp
 L Device:D_Bridge_+-AA D1
 U 1 1 604BA286
@@ -1586,4 +1531,59 @@ Wire Wire Line
 Connection ~ 1250 1250
 Wire Wire Line
 	1250 1250 1850 1250
+$Comp
+L Device:R_Pack08_Split RN1
+U 1 1 60C58123
+P 5850 8350
+F 0 "RN1" V 5643 8350 50  0000 C CNN
+F 1 "R_Pack08_Split" V 5734 8350 50  0001 C CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 5770 8350 50  0001 C CNN
+F 3 "~" H 5850 8350 50  0001 C CNN
+	1    5850 8350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Pack08_Split RN2
+U 1 1 60C51825
+P 2300 5000
+F 0 "RN2" H 2388 5046 50  0000 L CNN
+F 1 "R_Pack08_Split" H 2388 4955 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 2220 5000 50  0001 C CNN
+F 3 "~" H 2300 5000 50  0001 C CNN
+	1    2300 5000
+	0    1    1    0   
+$EndComp
+Connection ~ 6000 8350
+$Comp
+L Device:R_Pack08_Split RN3
+U 4 1 612C17FD
+P 6000 9100
+F 0 "RN3" H 6088 9146 50  0000 L CNN
+F 1 "R_Pack08_Split" H 6088 9055 50  0000 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 5920 9100 50  0001 C CNN
+F 3 "~" H 6000 9100 50  0001 C CNN
+	4    6000 9100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_Pack08_Split RN3
+U 1 1 612C3258
+P 4000 7200
+F 0 "RN3" V 3900 7100 50  0000 L CNN
+F 1 "R_Pack08_Split" H 4088 7155 50  0001 L CNN
+F 2 "Package_SO:SOIC-16_4.55x10.3mm_P1.27mm" V 3920 7200 50  0001 C CNN
+F 3 "~" H 4000 7200 50  0001 C CNN
+	1    4000 7200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2300 6450 2450 6450
+Connection ~ 2450 6450
+Wire Wire Line
+	2450 6450 2650 6450
+Connection ~ 2650 6450
+Wire Wire Line
+	2650 6450 2850 6450
+Text Label 2650 6150 1    50   ~ 0
+aref_1k2
 $EndSCHEMATC
