@@ -274,13 +274,13 @@ $EndComp
 $Comp
 L Connector:Conn_01x08_Male J1
 U 1 1 60073D15
-P 850 2850
-F 0 "J1" H 958 3331 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 958 3240 50  0000 C CNN
-F 2 "Connector_JST:JST_VH_B8P-VH_1x08_P3.96mm_Vertical" H 850 2850 50  0001 C CNN
-F 3 "~" H 850 2850 50  0001 C CNN
-	1    850  2850
-	1    0    0    -1  
+P 1000 2950
+F 0 "J1" H 1108 3431 50  0000 C CNN
+F 1 "Conn_01x08_Male" H 1108 3340 50  0000 C CNN
+F 2 "Connector_JST:JST_VH_B8P-VH_1x08_P3.96mm_Vertical" H 1000 2950 50  0001 C CNN
+F 3 "~" H 1000 2950 50  0001 C CNN
+	1    1000 2950
+	-1   0    0    1   
 $EndComp
 $Comp
 L power:GNDPWR #PWR06
@@ -308,14 +308,6 @@ F 3 "" H 1700 2850 50  0001 C CNN
 	1    1700 2850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1050 2550 1100 2550
-Wire Wire Line
-	1050 2650 1100 2650
-Wire Wire Line
-	1050 2750 1150 2750
-Wire Wire Line
-	1050 2850 1700 2850
 Text Label 1150 2950 0    50   ~ 0
 pot_a
 Text Label 1150 3250 0    50   ~ 0
@@ -324,14 +316,6 @@ Text Label 1150 3050 0    50   ~ 0
 sensor_a
 Text Label 1150 3150 0    50   ~ 0
 sensor_b
-Wire Wire Line
-	1050 2950 1150 2950
-Wire Wire Line
-	1050 3050 1150 3050
-Wire Wire Line
-	1050 3150 1100 3150
-Wire Wire Line
-	1050 3250 1100 3250
 Text Label 3150 4650 0    50   ~ 0
 contactor_b
 Wire Wire Line
@@ -1586,4 +1570,20 @@ F 3 "~" H 1850 1550 50  0001 C CNN
 	1    1850 1550
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	800  3250 1100 3250
+Wire Wire Line
+	800  3150 1100 3150
+Wire Wire Line
+	800  3050 1150 3050
+Wire Wire Line
+	800  2950 1150 2950
+Wire Wire Line
+	800  2850 1700 2850
+Wire Wire Line
+	800  2750 1150 2750
+Wire Wire Line
+	800  2650 1100 2650
+Wire Wire Line
+	800  2550 1100 2550
 $EndSCHEMATC
