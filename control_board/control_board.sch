@@ -1230,7 +1230,6 @@ F 3 "~" H 4450 3500 50  0001 C CNN
 	6    4450 3500
 	1    0    0    -1  
 $EndComp
-NoConn ~ 7600 4350
 Text Notes 6500 4650 0    50   ~ 0
 RN1 -> 1k\nRN2 -> 1k\nRN3 -> 330
 $Comp
@@ -1619,5 +1618,16 @@ F 2 "" H 7600 4650 50  0001 C CNN
 F 3 "" H 7600 4650 50  0001 C CNN
 	1    7600 4650
 	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6029FF95
+P 7600 4350
+F 0 "#PWR?" H 7600 4100 50  0001 C CNN
+F 1 "GND" H 7605 4177 50  0000 C CNN
+F 2 "" H 7600 4350 50  0001 C CNN
+F 3 "" H 7600 4350 50  0001 C CNN
+	1    7600 4350
+	-1   0    0    1   
 $EndComp
 $EndSCHEMATC
