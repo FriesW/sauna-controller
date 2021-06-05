@@ -18,10 +18,10 @@ bool cycle(){
         last = millis();
         return true;
     }
-    if( millis() - last < 10UL ) {
+    if( millis() - last < 100UL ) {
         return false;
     }
-    last += 10UL;
+    last += 100UL;
     return true;
 }
 
@@ -33,10 +33,9 @@ void kick() {
     if( t > ( 1000UL * 60UL * 100UL ) )
         halt();
     // min WD timeout 1 sec
-    if( (t - last) < 800UL )
+    if( (t - last) < 750UL )
         return;
     last = t;
 
     digitalWrite( WD_KICK, !digitalRead(WD_KICK) );
 }
-
