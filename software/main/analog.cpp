@@ -44,7 +44,7 @@ void anlg_update(){
     }
     ntc_off();
 
-    Serial.print(pcb_r);
+    Serial.print( volt_ntc_convert(pcb_r) );
     Serial.print(" ");
     Serial.print(room_r);
     Serial.print(" ");
@@ -75,19 +75,6 @@ static void ntc_on(){
     pinMode(ROOM_TAP, INPUT);
 }
 
-/*
-void anlg_read_avg(uint pin, float * val) {
-    // 1k + 1k divider + internal 32k pulldown on AREF
-    #define AREF_V (2.461538)
-    float v = (float)analogRead(pin);
-    v = v / ((float)(1<<10) - 1.0) * AREF_V;
-    if( *val <= 0.0 || *val >= AREF_V )
-        *val = v;
-    else
-        *val = v * 0.1 + (*val) * 0.9;
-    #undef AREF_V
-}
-
 // Return temperature in deg C, readings saturate at ends of range
 float volt_ntc_convert(float v) {
     if( v > ntc_lut[0] )
@@ -107,6 +94,7 @@ float volt_ntc_convert(float v) {
     return 0.0;
 }
 
+/*
 // Return 0.0 - 1.0 for pot position
 float volt_pot_convert(float v) {
     if (v <= 0.0) return 0.0;
