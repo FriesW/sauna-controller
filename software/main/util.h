@@ -9,4 +9,7 @@ void set_relay(bool target);
 bool cycle();
 void kick();
 
+#define MIN(a,b) (((a)<(b))?(a):(b))
+#define MAX(a,b) (((a)>(b))?(a):(b))
+
 #endif

@@ -25,9 +25,16 @@ static void ntc_off();
 static void ntc_on();
 static float resist_ntc_convert(float v);
 
+float pcb_temp;
+float room_temp;
+float pot_pos;
+
 void anlg_init(){
     analogReference( EXTERNAL );
     ntc_off();
+    pcb_temp = 100.0f;
+    room_temp = 100.0f;
+    pot_pos = 0.0f;
 }
 
 void anlg_update(){
@@ -45,11 +52,22 @@ void anlg_update(){
     }
     ntc_off();
 
-    Serial.print( resist_ntc_convert(pcb_r) );
+    if( pcb_r > 0 )
+        pcb_temp = resist_ntc_convert(pcb_r);
+    else
+        pcb_temp = 100.0f;
+    if( room_r > 0 )
+        room_temp = resist_ntc_convert(room_r);
+    else
+        room_temp = 100.0f;
+    pot_r = pot_r / 300.0f;
+    pot_pos = MIN(1.0f, MAX(pot_r, 0.0f) );
+
+    Serial.print(pcb_temp);
     Serial.print(" ");
-    Serial.print(room_r);
+    Serial.print(room_temp);
     Serial.print(" ");
-    Serial.println(pot_r);
+    Serial.println(pot_pos);
 }
 
 static void read(float * v, float scale, uint8_t pin, uint16_t upper_r){
