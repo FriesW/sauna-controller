@@ -23,6 +23,7 @@ static void set_range(const range_struct * range);
 static void read(float * v, float scale, uint8_t pin, uint16_t upper_r);
 static void ntc_off();
 static void ntc_on();
+static float resist_ntc_convert(float v);
 
 void anlg_init(){
     analogReference( EXTERNAL );
@@ -44,7 +45,7 @@ void anlg_update(){
     }
     ntc_off();
 
-    Serial.print( volt_ntc_convert(pcb_r) );
+    Serial.print( resist_ntc_convert(pcb_r) );
     Serial.print(" ");
     Serial.print(room_r);
     Serial.print(" ");
@@ -76,15 +77,15 @@ static void ntc_on(){
 }
 
 // Return temperature in deg C, readings saturate at ends of range
-float volt_ntc_convert(float v) {
-    if( v > ntc_lut[0] )
+static float resist_ntc_convert(float r) {
+    if( r > ntc_lut[0] )
         return ntc_start_temp;
-    if( v < ntc_lut[ntc_lut_size-1] )
+    if( r < ntc_lut[ntc_lut_size-1] )
         return ntc_start_temp + (ntc_lut_size-1) * ntc_temp_step;
     for(uint i = 0; i < ntc_lut_size - 1; i++) {
-        if( ntc_lut[i] >= v && v >= ntc_lut[i+1] ) {
+        if( ntc_lut[i] >= r && r >= ntc_lut[i+1] ) {
             float g_delta = ntc_lut[i] - ntc_lut[i+1];
-            float m_delta = ntc_lut[i] - v;
+            float m_delta = ntc_lut[i] - r;
             float ratio = m_delta / g_delta;
             return ntc_start_temp + ((float)i + ratio) * ntc_temp_step;
         }
@@ -93,18 +94,6 @@ float volt_ntc_convert(float v) {
     // Should not get here
     return 0.0;
 }
-
-/*
-// Return 0.0 - 1.0 for pot position
-float volt_pot_convert(float v) {
-    if (v <= 0.0) return 0.0;
-    if (v >= 2.5) return 1.0;
-    float p = ( 330.0 * v / (5.0 - v) ) / 300.0;
-    if (p >= 1.0) return 1.0;
-    if (p <= 0.0) return 0.0;
-    return p;
-}
-*/
 
 static void set_range(const range_struct * range){
     #define SET_PIN(p, s) { \
@@ -122,37 +111,3 @@ static void set_range(const range_struct * range){
     #undef SET_LUT
     #undef SET
 }
-
-/*
-static float range_set(uint range) {
-    static const uint aref_pins[] = {AREF_330, AREF_1K0, AREF_1K1};
-    static const int states[][] = {
-        {-1, -1,  1},
-        {-1,  0,  1},
-        {-1,  1,  1},
-        { 0,  0,  1},
-        { 0,  1,  1},
-        { 1,  1,  1},
-    };
-    static const float ratios[] = {
-        0.197567f,
-        0.246211f,
-        0.395135f,
-        0.969696f,
-        0.984615f,
-        0.993826f,
-    };
-    #define SET_PIN(p, s) { pinMode( (p), (s) == 0 ? INPUT : OUTPUT); if((s) != 0) digitalWrite((p), (s) == 1); }
-    #define SET_LUT(lut, id) SET_PIN( aref_pins[id], lut[id] )
-    #define SET(lut) SET(lut, 0) SET(lut, 1) SET(lut, 2)
-
-    if( range > 5 ) return -1.0f;
-    SET( states[range] );
-    delay(6);
-    return ratios[range];
-
-    #undef SET_PIN
-    #undef SET_LUT
-    #undef SET
-}
-*/
