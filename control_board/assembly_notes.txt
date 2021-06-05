@@ -1,0 +1,8 @@
+D1 - notch toward top if connector is top
+D2 - writing correct if connector is top
+D3 - stripe at the bottom of the bucket
+U3 & U4 - dot towards connector
+U5 - dot closes to the edge
+RN1 & RN2 - 1k
+RN3 - 330
+
