@@ -11,5 +11,8 @@
 #define ROOM_TEMP (15)
 #define POT (14)
 
-#endif
+#define AREF_1K0 (7)
+#define AREF_1K1 (8)
+#define AREF_330 (9)
 
+#endif

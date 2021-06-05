@@ -4,7 +4,6 @@
 #include "thermostat.h"
 #include "analog.h"
 
-
 void setup() {
     analogReference( EXTERNAL );
     pinMode(P_RQST, OUTPUT);
@@ -14,6 +13,8 @@ void setup() {
     pinMode(ROOM_TEMP, INPUT);
     pinMode(POT, INPUT);
     pinMode(BD_LED, OUTPUT);
+
+    Serial.begin(9600);
 
     // Startup sequence
     // Set outputs
@@ -32,6 +33,17 @@ void setup() {
     delay(500);
     digitalWrite(SR_RST, LOW);
 
+    //float v = 0.0;
+    //while(true){
+        //analogRead(PCB_TEMP);
+    //}
+
+    pinMode(AREF_1K0, OUTPUT);
+    pinMode(AREF_1K1, OUTPUT);
+    pinMode(AREF_330, OUTPUT);
+    digitalWrite(AREF_1K0, HIGH);
+    digitalWrite(AREF_1K1, HIGH);
+    digitalWrite(AREF_330, LOW);
 }
 
 float a_ntc_room = 0.0;
@@ -39,13 +51,18 @@ float a_ntc_pcb = 0.0;
 float a_pot = 0.0;
 
 void loop() {
-    update();
+    //update();
     if( !cycle() ) return;
     kick();
 
+    set_relay( ( millis() / 1000 ) % 2 == 0 );
+
     anlg_read_avg( PCB_TEMP, &a_ntc_pcb );
-    anlg_read_avg( ROOM_TEMP, &a_ntc_room );
-    anlg_read_avg( POT, &a_pot );
+    //anlg_read_avg( ROOM_TEMP, &a_ntc_room );
+    //anlg_read_avg( POT, &a_pot );
+    //Serial.println( volt_ntc_convert(a_ntc_pcb) );
+    Serial.println( analogRead(PCB_TEMP) );
+    return;
 
     if( a_ntc_pcb > 45.0 ) {
         halt();
@@ -55,4 +72,3 @@ void loop() {
 
     target(t, a_ntc_room);
 }
-
