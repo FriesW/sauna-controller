@@ -20,7 +20,7 @@ static const struct range_struct ranges[RANGE_CNT] = {
 static const uint8_t aref_pins[3] = {AREF_330, AREF_1K0, AREF_1K1};
 static void set_range(const range_struct * range);
 
-static void read(float * v, float scale, uint8_t pin);
+static void read(float * v, float scale, uint8_t pin, uint16_t upper_r);
 static void ntc_off();
 static void ntc_on();
 
@@ -38,9 +38,9 @@ void anlg_update(){
     ntc_on();
     for(uint8_t i = 0; i < RANGE_CNT; i++){
         set_range( &ranges[i] );
-        read( &pcb_r, ranges[i].ratio, PCB_TEMP );
-        read( &room_r, ranges[i].ratio, ROOM_TEMP );
-        read( &pot_r, ranges[i].ratio, POT );
+        read( &pcb_r, ranges[i].ratio, PCB_TEMP, 2000 );
+        read( &room_r, ranges[i].ratio, ROOM_TEMP, 2000 );
+        read( &pot_r, ranges[i].ratio, POT, 330 );
     }
     ntc_off();
 
@@ -49,15 +49,18 @@ void anlg_update(){
     Serial.print(room_r);
     Serial.print(" ");
     Serial.println(pot_r);
-
-
 }
 
-static void read(float * v, float scale, uint8_t pin){
-    if( *v > 0.0f ) return;
+static void read(float * v, float scale, uint8_t pin, uint16_t upper_r){
+    // Always read, deterministic timing
     uint16_t vt = analogRead(pin) + analogRead(pin) + analogRead(pin) + analogRead(pin);
+    // Do nothing if already set or reading out of range
+    if( *v > 0.0f ) return;
     if( vt > (1020 * 4) ) return;
+    // Convert to ratio 0-1
     *v = (float)vt / (1023.0f * 4.0f) / scale;
+    // Convert to actual resistance
+    *v = *v * (float)upper_r / ( 1.0f - *v );
 }
 
 static void ntc_off(){
