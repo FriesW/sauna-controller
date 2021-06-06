@@ -13,7 +13,7 @@ void therm_update(float actual, float desired) {
     if( millis() < 1000UL * 10UL ) return;
 
     // Calculate histeresis
-    desired += desired + ( current_state ? (1.5) : (-1.5) );
+    desired += ( current_state ? (1.5f) : (-1.5f) );
     // Determine new state and if new state is different
     bool new_state = actual < desired;
     if( new_state == current_state ) return;

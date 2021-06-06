@@ -4,6 +4,9 @@
 #include "thermostat.h"
 #include "analog.h"
 
+#define TEMP_MIN (60.0f)
+#define TEMP_MAX (87.5f)
+
 void setup() {
     pinMode(P_RQST, OUTPUT);
     pinMode(SR_RST, OUTPUT);
@@ -42,10 +45,10 @@ void loop() {
     kick();
     anlg_update();
 
-    if( room_temp > 80.0f || pcb_temp > 80.0f )
+    if( room_temp > 95.0f || pcb_temp > 85.0f || room_temp < 0.0f || pcb_temp < 0.0f )
         halt();
 
-    float desired = 40.0f + pot_pos * (72.5f - 40.0f);
+    float desired = TEMP_MIN + pot_pos * (TEMP_MAX - TEMP_MIN);
     Serial.print("  Target deg C: ");
     Serial.print(desired);
 

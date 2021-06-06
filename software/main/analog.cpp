@@ -32,8 +32,8 @@ float pot_pos;
 void anlg_init(){
     analogReference( EXTERNAL );
     ntc_off();
-    pcb_temp = 100.0f;
-    room_temp = 100.0f;
+    pcb_temp = -1.0f;
+    room_temp = -1.0f;
     pot_pos = 0.0f;
 }
 
@@ -52,16 +52,16 @@ void anlg_update(){
     }
     ntc_off();
 
-    if( pcb_r > 0 )
+    if( pcb_r > 0.0f )
         pcb_temp = resist_ntc_convert(pcb_r);
     else
-        pcb_temp = 100.0f;
-    if( room_r > 0 )
+        pcb_temp = -1.0f;
+    if( room_r > 0.0f )
         room_temp = resist_ntc_convert(room_r);
     else
-        room_temp = 100.0f;
+        room_temp = -1.0f;
     pot_r = pot_r / 300.0f;
-    pot_pos = MIN(1.0f, MAX(pot_r, 0.0f) );
+    pot_pos = 1.0f - MIN(1.0f, MAX(pot_r, 0.0f) );
 
     Serial.print("PCB deg C: ");
     Serial.print(pcb_temp);
