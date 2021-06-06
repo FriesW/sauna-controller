@@ -6,7 +6,7 @@ void halt() {
     set_relay(false);
     bool s = false;
     while(true){
-        delay(250);
+        delay(100);
         digitalWrite(BD_LED, s);
         s = !s;
     }

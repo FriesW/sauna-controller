@@ -45,7 +45,8 @@ void loop() {
     kick();
     anlg_update();
 
-    if( room_temp > 95.0f || pcb_temp > 85.0f || room_temp < 0.0f || pcb_temp < 0.0f )
+    if( room_temp < 0.0f || pcb_temp < 0.0f || pot_pos < 0.0f ||
+        room_temp > 95.0f || pcb_temp > 85.0f )
         halt();
 
     float desired = TEMP_MIN + pot_pos * (TEMP_MAX - TEMP_MIN);

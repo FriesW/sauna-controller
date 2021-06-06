@@ -39,29 +39,26 @@ void anlg_init(){
 
 void anlg_update(){
 
-    float pcb_r = -1.0f;
-    float room_r = -1.0f;
-    float pot_r = -1.0f;
+    pcb_temp = -1.0f;
+    room_temp = -1.0f;
+    pot_pos = -1.0f;
 
     ntc_on();
     for(uint8_t i = 0; i < RANGE_CNT; i++){
         set_range( &ranges[i] );
-        read( &pcb_r, ranges[i].ratio, PCB_TEMP, 2000 );
-        read( &room_r, ranges[i].ratio, ROOM_TEMP, 2000 );
-        read( &pot_r, ranges[i].ratio, POT, 330 );
+        read( &pcb_temp, ranges[i].ratio, PCB_TEMP, 2000 );
+        read( &room_temp, ranges[i].ratio, ROOM_TEMP, 2000 );
+        read( &pot_pos, ranges[i].ratio, POT, 330 );
     }
     ntc_off();
 
-    if( pcb_r > 0.0f )
-        pcb_temp = resist_ntc_convert(pcb_r);
-    else
-        pcb_temp = -1.0f;
-    if( room_r > 0.0f )
-        room_temp = resist_ntc_convert(room_r);
-    else
-        room_temp = -1.0f;
-    pot_r = pot_r / 300.0f;
-    pot_pos = 1.0f - MIN(1.0f, MAX(pot_r, 0.0f) );
+    pcb_temp = resist_ntc_convert(pcb_temp);
+    room_temp = resist_ntc_convert(room_temp);
+
+    if( pot_pos >= 0.0f ){
+        pot_pos = pot_pos / 300.0f;
+        pot_pos = 1.0f - MIN(1.0f, MAX(pot_pos, 0.0f) );
+    }
 
     Serial.print("PCB deg C: ");
     Serial.print(pcb_temp);
@@ -97,6 +94,7 @@ static void ntc_on(){
 
 // Return temperature in deg C, readings saturate at ends of range
 static float resist_ntc_convert(float r) {
+    if( r < 0.0f ) return r;
     if( r > ntc_lut[0] )
         return ntc_start_temp;
     if( r < ntc_lut[ntc_lut_size-1] )
