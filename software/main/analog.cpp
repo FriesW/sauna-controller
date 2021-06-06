@@ -39,26 +39,38 @@ void anlg_init(){
 
 void anlg_update(){
 
-    pcb_temp = -1.0f;
-    room_temp = -1.0f;
-    pot_pos = -1.0f;
+    float calc_pcb_temp = -1.0f;
+    float calc_room_temp = -1.0f;
+    float calc_pot_pos = -1.0f;
 
     ntc_on();
     for(uint8_t i = 0; i < RANGE_CNT; i++){
         set_range( &ranges[i] );
-        read( &pcb_temp, ranges[i].ratio, PCB_TEMP, 2000 );
-        read( &room_temp, ranges[i].ratio, ROOM_TEMP, 2000 );
-        read( &pot_pos, ranges[i].ratio, POT, 330 );
+        read( &calc_pcb_temp, ranges[i].ratio, PCB_TEMP, 2000 );
+        read( &calc_room_temp, ranges[i].ratio, ROOM_TEMP, 2000 );
+        read( &calc_pot_pos, ranges[i].ratio, POT, 330 );
     }
     ntc_off();
 
-    pcb_temp = resist_ntc_convert(pcb_temp);
-    room_temp = resist_ntc_convert(room_temp);
+    calc_pcb_temp = resist_ntc_convert(calc_pcb_temp);
+    calc_room_temp = resist_ntc_convert(calc_room_temp);
 
-    if( pot_pos >= 0.0f ){
-        pot_pos = pot_pos / 300.0f;
-        pot_pos = 1.0f - MIN(1.0f, MAX(pot_pos, 0.0f) );
+    if( calc_pot_pos >= 0.0f ){
+        calc_pot_pos = calc_pot_pos / 300.0f;
+        calc_pot_pos = 1.0f - MIN(1.0f, MAX(calc_pot_pos, 0.0f) );
     }
+
+    #define ACC(dest, src) { \
+        if(src < 0.0f){dest = -1.0f;} \
+        else if(dest < 0.0f){dest = src;} \
+        else{dest = dest * 0.9f + src * 0.1f;} \
+    }
+
+    ACC(pcb_temp, calc_pcb_temp)
+    ACC(room_temp, calc_room_temp)
+    ACC(pot_pos, calc_pot_pos)
+
+    #undef ACC
 
     Serial.print("PCB deg C: ");
     Serial.print(pcb_temp);
