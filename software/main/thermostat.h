@@ -1,3 +1,1 @@
-void update();
-void target(float desired, float actual);
-
+void therm_update(float actual, float desired);

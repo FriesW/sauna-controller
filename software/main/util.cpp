@@ -4,7 +4,12 @@
 
 void halt() {
     set_relay(false);
-    while(true);
+    bool s = false;
+    while(true){
+        delay(250);
+        digitalWrite(BD_LED, s);
+        s = !s;
+    }
 }
 
 void set_relay(bool target) {

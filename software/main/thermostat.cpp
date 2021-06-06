@@ -2,36 +2,27 @@
 #include "thermostat.h"
 #include "util.h"
 
-static bool set = false;
-static float desired;
-static float actual;
-
 static ulong last_transition = 0;
 static bool current_state = false;
 
-void update() {
+void therm_update(float actual, float desired) {
 
-    if(!set) {
-        set_relay(false);
-        return;
-    }
-    
     set_relay( current_state );
-    
-    bool new_state = actual < ( desired + (current_state ? (1.5) : (-1.5)) );
+
+    // Wait 10 seconds before turning on
+    if( millis() < 1000UL * 10UL ) return;
+
+    // Calculate histeresis
+    desired += desired + ( current_state ? (1.5) : (-1.5) );
+    // Determine new state and if new state is different
+    bool new_state = actual < desired;
     if( new_state == current_state ) return;
+    // If turning on, then we need to make sure we aren't short cycling
     ulong t = millis();
-    if( t - last_transition < 1000UL * 45UL ) return;
+    if( new_state && t - last_transition < 1000UL * 45UL ) return;
 
     last_transition = t;
     current_state = new_state;
     set_relay( current_state );
 
 }
-
-void target(float d, float a) {
-    desired = d;
-    actual = a;
-    set = true;
-}
-

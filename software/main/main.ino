@@ -38,8 +38,18 @@ void setup() {
 
 
 void loop() {
-    //update();
     if( !cycle() ) return;
     kick();
     anlg_update();
+
+    if( room_temp > 80.0f || pcb_temp > 80.0f )
+        halt();
+
+    float desired = 40.0f + pot_pos * (72.5f - 40.0f);
+    Serial.print("  Target deg C: ");
+    Serial.print(desired);
+
+    therm_update(room_temp, desired);
+
+    Serial.println();
 }

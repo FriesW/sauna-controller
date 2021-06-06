@@ -63,11 +63,12 @@ void anlg_update(){
     pot_r = pot_r / 300.0f;
     pot_pos = MIN(1.0f, MAX(pot_r, 0.0f) );
 
+    Serial.print("PCB deg C: ");
     Serial.print(pcb_temp);
-    Serial.print(" ");
+    Serial.print("  Room deg C: ");
     Serial.print(room_temp);
-    Serial.print(" ");
-    Serial.println(pot_pos);
+    Serial.print("  Pot pos 0-1: ");
+    Serial.print(pot_pos);
 }
 
 static void read(float * v, float scale, uint8_t pin, uint16_t upper_r){
